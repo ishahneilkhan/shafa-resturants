@@ -1,3 +1,3 @@
 # shefa-resturants
 Projects
-Url : https://rafatmeraz.github.io/nextday-restaurant/
+Url : https://rafatmeraz.github.io/shefa-restaurant/
