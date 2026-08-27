@@ -3,283 +3,276 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shafa — Know what to prep for tomorrow</title>
-<meta name="description" content="Shafa helps restaurant owners decide exactly how much of each menu item to prep tomorrow, cutting food waste and stockouts using your own operational data plus weather, holiday, and event context.">
+<title>Shafa Restaurant — Home-style cooking, made fresh daily</title>
+<meta name="description" content="Shafa Restaurant — home-style cooking made fresh daily. View our menu, find our location and hours, or place an order.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-
-    :root {
-      --bg: oklch(99% 0.003 250);
-      --surface: oklch(97.5% 0.006 250);
-      --surface-2: oklch(95.5% 0.008 250);
-      --text: oklch(23% 0.02 255);
-      --text-muted: oklch(46% 0.02 255);
-      --text-faint: oklch(62% 0.015 255);
-      --border: oklch(90% 0.01 250);
-      --blue: oklch(55% 0.14 255);
-      --blue-dark: oklch(46% 0.13 255);
-      --blue-tint: oklch(94.5% 0.025 255);
-      --green: oklch(56% 0.13 155);
-      --green-dark: oklch(46% 0.12 155);
-      --green-tint: oklch(94.5% 0.03 155);
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
-    h1, h2, h3, .display { font-family: 'Sora', system-ui, sans-serif; letter-spacing: -0.01em; }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--blue-dark); }
-    p { line-height: 1.6; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      height: 48px; padding: 0 24px; border-radius: 10px; font-weight: 600; font-size: 15px;
-      font-family: 'IBM Plex Sans', system-ui, sans-serif; cursor: pointer; border: 1px solid transparent;
-      white-space: nowrap;
-    }
-    .btn-primary { background: var(--text); color: var(--bg); }
-    .btn-primary:hover { background: var(--blue-dark); }
-    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
-    .btn-ghost:hover { border-color: var(--text-faint); }
-    .btn-disabled {
-      background: var(--surface-2); color: var(--text-faint); border: 1px dashed var(--border);
-      cursor: not-allowed;
-    }
-    .pill {
-      display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px;
-      border-radius: 999px; font-size: 12.5px; font-weight: 600;
-    }
-    @media (max-width: 720px) {
-      .container { padding: 0 20px; }
-      .nav-links { display: none !important; }
-      .resp-grid { grid-template-columns: 1fr !important; }
-      h1 { font-size: 36px !important; }
-      h2 { font-size: 26px !important; }
-    }
-  
+  :root {
+    --bg: oklch(96% 0.025 95);
+    --surface: oklch(99% 0.008 95);
+    --ink: oklch(20% 0.02 145);
+    --muted: oklch(42% 0.03 145);
+    --faint: oklch(58% 0.02 100);
+    --border: oklch(88% 0.03 95);
+    --green: oklch(32% 0.06 155);
+    --green-dark: oklch(24% 0.05 155);
+    --green-tint: oklch(93% 0.025 155);
+    --gold: oklch(74% 0.13 80);
+    --gold-dark: oklch(58% 0.13 75);
+    --gold-tint: oklch(93% 0.06 85);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  h1, h2, h3, .display { font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.005em; }
+  a { color: var(--gold-dark); text-decoration: none; }
+  p { line-height: 1.65; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 26px; border-radius: 999px; font-weight: 600; font-size: 15px; font-family: 'Inter', sans-serif; cursor: pointer; border: 1px solid transparent; white-space: nowrap; transition: transform .15s ease, background .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--green); color: var(--surface); }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--surface); }
+  .dot-row { display: flex; gap: 6px; }
+  .dot-row span { width: 4px; height: 4px; border-radius: 50%; background: var(--gold-dark); }
+  .card { transition: transform .18s ease, box-shadow .18s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -18px oklch(20% 0.05 155 / 0.35); }
+  .fade-line { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .card { transition: none; }
+  }
+  @media (max-width: 760px) {
+    .container { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .resp-grid { grid-template-columns: 1fr !important; }
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    h1 { font-size: 34px !important; }
+    h2 { font-size: 26px !important; }
+  }
 </style>
 </head>
 <body>
-<div style="width: 100%; min-height: 100%; background: var(--bg); overflow-x: hidden;">
+<div style="width: 100%; overflow-x: hidden;">
 
   <!-- NAV -->
-  <div style="position: sticky; top: 0; z-index: 20; background: color-mix(in oklab, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 76px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-          <rect width="34" height="34" rx="9" fill="url(#navGrad)"/>
-          <path d="M11 21L21 11" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M14 11H21V18" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="navGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#2A6FE0"/>
-              <stop offset="1" stop-color="#22A06B"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="display" style="font-size: 20px; font-weight: 700; color: var(--text);">Shafa</span>
+  <div style="position: sticky; top: 0; z-index: 20; background: color-mix(in oklab, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 78px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 8px;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--green)" stroke-width="1.4"/><path d="M9 17c1.2-4 3-6.5 5-8.5 2 2 3.8 4.5 5 8.5" stroke="var(--gold-dark)" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="8" r="1.3" fill="var(--gold-dark)"/></svg>
+        <span class="display" style="font-size: 21px; font-weight: 700; color: var(--green);">Shafa</span>
+      </a>
+      <div class="nav-links" style="display: flex; align-items: center; gap: 34px;">
+        <a href="#about" style="font-size: 14px; font-weight: 500; color: var(--muted);">Our story</a>
+        <a href="#menu" style="font-size: 14px; font-weight: 500; color: var(--muted);">Menu</a>
+        <a href="#gallery" style="font-size: 14px; font-weight: 500; color: var(--muted);">Gallery</a>
+        <a href="#location" style="font-size: 14px; font-weight: 500; color: var(--muted);">Location &amp; Hours</a>
       </div>
-      <div class="nav-links" style="display: flex; align-items: center; gap: 36px;">
-        <a href="#features" style="font-size: 14.5px; font-weight: 500; color: var(--text-muted);">Features</a>
-        <a href="#how-it-works" style="font-size: 14.5px; font-weight: 500; color: var(--text-muted);">How it works</a>
-        <a href="#download" style="font-size: 14.5px; font-weight: 500; color: var(--text-muted);">Download</a>
-      </div>
-      <a href="#download" class="btn btn-primary" style="height: 40px; padding: 0 20px; font-size: 14px;">Download</a>
+      <a href="#order" class="btn btn-primary" style="height: 40px; padding: 0 20px; font-size: 13.5px;">Order now</a>
     </div>
   </div>
 
   <!-- HERO -->
-  <div class="container" style="padding-top: 84px; padding-bottom: 72px;">
-    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; max-width: 780px; margin: 0 auto;">
-      <div class="pill" style="background: var(--green-tint); color: var(--green-dark);">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        Built for independent restaurants
-      </div>
-      <h1 style="font-size: 52px; line-height: 1.08; font-weight: 700; margin: 0; color: var(--text);">
-        Know exactly how much to prep for tomorrow
-      </h1>
-      <p style="font-size: 18px; color: var(--text-muted); margin: 0; max-width: 620px;">
-        Shafa learns from your restaurant's own production, sales, and waste history — plus weather, holidays,
-        and local events — to recommend how much of each menu item to make tomorrow. Less waste. Fewer sold-out items.
-      </p>
-      <div style="display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; justify-content: center;">
-        <a href="#download" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 5.5L10 4.4V11H3V5.5Z" fill="currentColor"/><path d="M11 4.25L21 3V11H11V4.25Z" fill="currentColor"/><path d="M3 12H10V18.6L3 17.5V12Z" fill="currentColor"/><path d="M11 12H21V20L11 18.75V12Z" fill="currentColor"/></svg>
-          Download for Windows
-        </a>
-        <a href="#download" class="btn btn-ghost">
-          <svg width="16" height="18" viewBox="0 0 24 27" fill="none"><path d="M19.7 14.3c0-3 2.5-4.4 2.6-4.5-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-1 0-2.4-1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9 1c1.6 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.4 1.7-3.5-.1 0-3.2-1.2-3.1-4.9Z" fill="currentColor"/><path d="M16.9 5.4c.8-1 1.4-2.4 1.2-3.8-1.2.05-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.3.1 2.7-.7 3.6-1.7Z" fill="currentColor"/></svg>
-          Download for Mac
-        </a>
-      </div>
-      <p style="font-size: 13px; color: var(--text-faint); margin: 2px 0 0;">Windows &amp; Mac available now · Linux planned</p>
-    </div>
-  </div>
-
-  <!-- PROBLEM / VALUE -->
-  <div style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 0;">
-    <div class="container">
-      <div style="max-width: 620px; margin: 0 auto 48px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 14px; color: var(--text);">Two ways to lose money every service</h2>
-        <p style="font-size: 16px; color: var(--text-muted); margin: 0;">Both overproducing and underproducing cost real money — Shafa narrows the gap using your own patterns.</p>
-      </div>
-      <div class="resp-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
-        <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 20h18M6 20V10M12 20V4M18 20v13" stroke="var(--blue-dark)" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px;">Overproduce</h3>
-          <p style="font-size: 14.5px; color: var(--text-muted); margin: 0;">Excess prep becomes waste — a direct cost loss, even after accounting for what gets reused into other dishes.</p>
+  <div id="top" class="container" style="padding-top: 72px; padding-bottom: 72px;">
+    <div class="hero-grid" style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center;">
+      <div>
+        <div class="dot-row" style="margin-bottom: 18px;"><span></span><span></span><span></span></div>
+        <h1 style="font-size: 50px; line-height: 1.08; font-weight: 600; margin: 0 0 18px; color: var(--green);">
+          Home-style cooking, made fresh every day
+        </h1>
+        <p style="font-size: 17.5px; color: var(--muted); margin: 0 0 30px; max-width: 460px;">
+          Shafa Restaurant serves comforting, made-from-scratch dishes in a warm dining room —
+          or delivered straight to your door. Every recipe is a family one, cooked the same way it always has been.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#menu" class="btn btn-primary">View menu</a>
+          <a href="#location" class="btn btn-ghost">Find us</a>
         </div>
-        <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 20h18M6 20V14M12 20V4M18 20v9" stroke="var(--green-dark)" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px;">Underproduce</h3>
-          <p style="font-size: 14.5px; color: var(--text-muted); margin: 0;">Running out means lost sales and customers who leave unhappy when their favorite item is gone.</p>
+        <div style="display: flex; gap: 28px; margin-top: 36px;">
+          <div><p class="display" style="font-size: 24px; font-weight: 600; margin: 0; color: var(--green);">12+</p><p style="font-size: 12.5px; color: var(--faint); margin: 2px 0 0;">years cooking for the neighborhood</p></div>
+          <div><p class="display" style="font-size: 24px; font-weight: 600; margin: 0; color: var(--green);">30+</p><p style="font-size: 12.5px; color: var(--faint); margin: 2px 0 0;">dishes on the menu</p></div>
         </div>
-        <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--surface-2); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.4-6.4l-2.1 2.1M9.7 16.3l-2.1 2.1m0-12.8l2.1 2.1m6.6 6.6l2.1 2.1" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3.5" stroke="var(--text)" stroke-width="2"/></svg>
-          </div>
-          <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px;">The gap is learnable</h3>
-          <p style="font-size: 14.5px; color: var(--text-muted); margin: 0;">Your own history, plus context like weather and nearby events, predictably shifts demand — Shafa learns it.</p>
+      </div>
+      <div style="background: var(--green); border-radius: 22px; padding: 38px; color: var(--surface); position: relative; overflow: hidden;">
+        <svg width="220" height="220" viewBox="0 0 220 220" style="position: absolute; right: -50px; top: -50px; opacity: 0.14;"><circle cx="110" cy="110" r="105" stroke="var(--gold)" stroke-width="1.4" fill="none"/><circle cx="110" cy="110" r="80" stroke="var(--gold)" stroke-width="1.4" fill="none"/></svg>
+        <p class="display" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; position: relative;">Today's special</p>
+        <h3 class="display" style="font-size: 27px; font-weight: 600; margin: 0 0 10px; position: relative;">Slow-braised lamb shank</h3>
+        <p style="font-size: 14px; color: color-mix(in oklab, var(--surface) 80%, transparent); margin: 0 0 22px; max-width: 300px; position: relative;">
+          Served with saffron rice, roasted vegetables, and warm flatbread.
+        </p>
+        <div style="display: flex; align-items: baseline; gap: 8px; position: relative;">
+          <span class="display" style="font-size: 22px; font-weight: 600; color: var(--gold);">$18.50</span>
+          <span style="font-size: 12.5px; color: color-mix(in oklab, var(--surface) 65%, transparent);">available until sold out</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FEATURES -->
-  <div id="features" style="padding: 88px 0;">
+  <!-- ABOUT -->
+  <div id="about" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 0;">
     <div class="container">
-      <div style="max-width: 620px; margin: 0 auto 52px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 14px; color: var(--text);">Everything the kitchen needs, in one screen</h2>
-        <p style="font-size: 16px; color: var(--text-muted); margin: 0;">From daily logging to tomorrow's prep plan, without adding work to your day.</p>
-      </div>
-      <div class="resp-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><rect x="3" y="4" width="18" height="17" rx="2" stroke="var(--blue)" stroke-width="1.8"/><path d="M8 2v4M16 2v4M3 10h18" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14l2 2 4-4" stroke="var(--green-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Daily logging, under a minute</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Record prepared, sold, wasted, and reused quantities per item in a fast, low-friction entry screen.</p>
+      <div class="resp-grid" style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center;">
+        <div style="aspect-ratio: 4/3; border-radius: 18px; background: linear-gradient(135deg, var(--gold-tint), var(--green-tint)); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none"><path d="M12 3c-3.5 3-5.5 6-5.5 9.2A5.5 5.5 0 0012 17.7a5.5 5.5 0 005.5-5.5C17.5 9 15.5 6 12 3Z" stroke="var(--green)" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 14a2.7 2.7 0 002.7 2.7" stroke="var(--gold-dark)" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><path d="M3 17l5-5 4 4 8-9" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h5v5" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="19" width="18" height="2" rx="1" fill="var(--green-dark)"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Prep recommendations, explained</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Each number comes with a plain-English reason and a confidence range — not just a bare figure.</p>
-        </div>
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><path d="M4 20V10M11 20V4M18 20v6" stroke="var(--green-dark)" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="8" r="1.4" fill="var(--blue)"/><circle cx="11" cy="2.5" r="1.4" fill="var(--blue)"/><circle cx="18" cy="14.5" r="1.4" fill="var(--blue)"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Waste analytics</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">See waste volume and cost trends by item, category, and day — and spot chronic over- or under-production.</p>
-        </div>
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><circle cx="12" cy="12" r="4.5" stroke="var(--blue)" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" stroke="var(--green-dark)" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Weather, holiday &amp; event context</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Weather and holidays are pulled in automatically; flag nearby events that public data won't catch.</p>
-        </div>
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><path d="M12 2C7 6 5 9.5 5 13a7 7 0 0014 0c0-3.5-2-7-7-11Z" stroke="var(--blue)" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 14a3 3 0 003 3" stroke="var(--green-dark)" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Offline-first</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Logging and your last synced recommendations work with no connection, and sync automatically once you're back online.</p>
-        </div>
-
-        <div style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-bottom: 14px;"><circle cx="8" cy="8" r="3" stroke="var(--blue)" stroke-width="1.8"/><circle cx="17" cy="8" r="3" stroke="var(--blue)" stroke-width="1.8"/><path d="M2.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M13.5 20c0-2.8 2.3-4.7 5-4.7s5 1.9 5 4.7" stroke="var(--green-dark)" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 6px;">Workforce management</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Shift templates, a weekly shift board, and QR-badge clock-in/out with hours computed automatically.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- HOW IT WORKS -->
-  <div id="how-it-works" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 88px 0;">
-    <div class="container">
-      <div style="max-width: 620px; margin: 0 auto 56px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 14px; color: var(--text);">How it works</h2>
-        <p style="font-size: 16px; color: var(--text-muted); margin: 0;">Three steps, repeated daily, that get sharper the longer you use it.</p>
-      </div>
-      <div class="resp-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; position: relative;">
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px;">1</div>
-          <h3 style="font-size: 16.5px; font-weight: 600; margin: 0;">Log today's numbers</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0; max-width: 260px;">Prepared, sold, wasted, and reused — entered once a day, in under a minute.</p>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--green); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px;">2</div>
-          <h3 style="font-size: 16.5px; font-weight: 600; margin: 0;">Shafa reads the pattern</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0; max-width: 260px;">Your history is combined with weather, holidays, and flagged local events.</p>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--text); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px;">3</div>
-          <h3 style="font-size: 16.5px; font-weight: 600; margin: 0;">Get tomorrow's prep plan</h3>
-          <p style="font-size: 14px; color: var(--text-muted); margin: 0; max-width: 260px;">A per-item recommendation with a short "why," and a confidence range — not just a number.</p>
+        <div>
+          <p class="display" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 12px;">Our story</p>
+          <h2 style="font-size: 30px; font-weight: 600; margin: 0 0 16px; color: var(--green);">Started in a home kitchen, still cooked the same way</h2>
+          <p style="font-size: 15.5px; color: var(--muted); margin: 0 0 14px;">
+            Shafa opened its doors with one goal: to serve the kind of food you'd get at a family
+            table, not a factory line. Every dish starts from raw ingredients each morning — no
+            shortcuts, no pre-made bases.
+          </p>
+          <p style="font-size: 15.5px; color: var(--muted); margin: 0;">
+            Replace this with your restaurant's real story — who started it, what makes your
+            cooking different, and what the name means to you.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- DOWNLOAD -->
-  <div id="download" style="padding: 88px 0;">
+  <!-- MENU -->
+  <div id="menu" style="padding: 80px 0;">
     <div class="container">
-      <div style="max-width: 620px; margin: 0 auto 48px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 14px; color: var(--text);">Get Shafa</h2>
-        <p style="font-size: 16px; color: var(--text-muted); margin: 0;">Shafa is a desktop app that runs on the device you already keep at your restaurant.</p>
+      <div style="max-width: 560px; margin: 0 auto 46px; text-align: center;">
+        <p class="display" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 10px;">Menu</p>
+        <h2 style="font-size: 30px; font-weight: 600; margin: 0 0 12px; color: var(--green);">A taste of what we serve</h2>
+        <p style="font-size: 15px; color: var(--muted); margin: 0;">A short sample — the full menu is available in the dining room and on delivery apps.</p>
       </div>
-      <div class="resp-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 720px; margin: 0 auto;">
 
-        <div style="border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 5.5L10 4.4V11H3V5.5Z" fill="var(--blue)"/><path d="M11 4.25L21 3V11H11V4.25Z" fill="var(--blue)"/><path d="M3 12H10V18.6L3 17.5V12Z" fill="var(--blue)"/><path d="M11 12H21V20L11 18.75V12Z" fill="var(--blue)"/></svg>
-          <div>
-            <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 4px;">Windows</h3>
-            <p style="font-size: 13.5px; color: var(--text-faint); margin: 0;">Coming soon</p>
+      <div class="resp-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 44px;">
+        <div>
+          <p class="display" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Starters</p>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Lentil soup</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Cumin, lemon, crispy onions</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$6.00</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Stuffed grape leaves</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Rice, herbs, olive oil — 6 pieces</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$7.50</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Hummus plate</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Warm flatbread, olive oil, paprika</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$7.00</p>
+            </div>
           </div>
-          <span class="btn btn-disabled" style="width: 100%;">Download .exe</span>
         </div>
 
-        <div style="border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
-          <svg width="26" height="30" viewBox="0 0 24 27" fill="none"><path d="M19.7 14.3c0-3 2.5-4.4 2.6-4.5-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-1 0-2.4-1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9 1c1.6 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.4 1.7-3.5-.1 0-3.2-1.2-3.1-4.9Z" fill="var(--green)"/><path d="M16.9 5.4c.8-1 1.4-2.4 1.2-3.8-1.2.05-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.3.1 2.7-.7 3.6-1.7Z" fill="var(--green)"/></svg>
-          <div>
-            <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 4px;">Mac</h3>
-            <p style="font-size: 13.5px; color: var(--text-faint); margin: 0;">Coming soon</p>
+        <div>
+          <p class="display" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Mains</p>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Slow-braised lamb shank</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Saffron rice, roasted vegetables</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$18.50</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Grilled chicken kabob</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Garlic yogurt, grilled peppers</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$14.00</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;">
+              <div><p style="margin: 0; font-weight: 600; font-size: 15px;">Vegetable biryani</p><p style="margin: 2px 0 0; font-size: 13px; color: var(--faint);">Basmati rice, seasonal vegetables, raita</p></div>
+              <p class="display" style="margin: 0; font-weight: 600; color: var(--green); white-space: nowrap;">$13.00</p>
+            </div>
           </div>
-          <span class="btn btn-disabled" style="width: 100%;">Download .dmg</span>
         </div>
-
       </div>
-      <p style="text-align: center; font-size: 13.5px; color: var(--text-faint); margin: 24px 0 0;">Linux support planned. One device per restaurant.</p>
+      <p style="text-align: center; font-size: 13px; color: var(--faint); margin: 34px 0 0;">Sample menu shown — replace with your actual dishes and prices.</p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="gallery" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 76px 0;">
+    <div class="container">
+      <div style="max-width: 560px; margin: 0 auto 40px; text-align: center;">
+        <h2 style="font-size: 28px; font-weight: 600; margin: 0 0 12px; color: var(--green);">From the kitchen</h2>
+        <p style="font-size: 15px; color: var(--muted); margin: 0;">Swap these placeholders for real photos of your dishes and dining room.</p>
+      </div>
+      <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+        <div class="card" style="aspect-ratio: 1; border-radius: 14px; background: var(--green-tint); border: 1px solid var(--border);"></div>
+        <div class="card" style="aspect-ratio: 1; border-radius: 14px; background: var(--gold-tint); border: 1px solid var(--border);"></div>
+        <div class="card" style="aspect-ratio: 1; border-radius: 14px; background: var(--green-tint); border: 1px solid var(--border);"></div>
+        <div class="card" style="aspect-ratio: 1; border-radius: 14px; background: var(--gold-tint); border: 1px solid var(--border);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div style="padding: 76px 0;">
+    <div class="container">
+      <div style="max-width: 560px; margin: 0 auto 44px; text-align: center;">
+        <h2 style="font-size: 28px; font-weight: 600; margin: 0 0 12px; color: var(--green);">What guests say</h2>
+      </div>
+      <div class="resp-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+          <p style="font-size: 14px; color: var(--muted); margin: 0 0 14px;">"Tastes like a home-cooked meal, not a restaurant plate. The lamb shank is worth the trip alone."</p>
+          <p style="font-size: 13px; font-weight: 600; color: var(--ink); margin: 0;">— Replace with a real review</p>
+        </div>
+        <div class="card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+          <p style="font-size: 14px; color: var(--muted); margin: 0 0 14px;">"Our whole family has a favorite dish here — that says everything about the range on the menu."</p>
+          <p style="font-size: 13px; font-weight: 600; color: var(--ink); margin: 0;">— Replace with a real review</p>
+        </div>
+        <div class="card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+          <p style="font-size: 14px; color: var(--muted); margin: 0 0 14px;">"Delivery arrives hot, every time. That's rare, and it's why we order weekly."</p>
+          <p style="font-size: 13px; font-weight: 600; color: var(--ink); margin: 0;">— Replace with a real review</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION & HOURS -->
+  <div id="location" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 76px 0;">
+    <div class="container">
+      <div class="resp-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+        <div>
+          <h2 style="font-size: 28px; font-weight: 600; margin: 0 0 20px; color: var(--green);">Find us</h2>
+          <div style="border: 1px solid var(--border); border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; background: var(--bg); display: flex; align-items: center; justify-content: center;">
+            <p style="font-size: 13px; color: var(--faint); margin: 0;">Map placeholder — embed your Google Maps location here</p>
+          </div>
+          <p style="font-size: 14.5px; color: var(--muted); margin: 16px 0 4px;"><strong style="color: var(--ink);">Address:</strong> Your street address, city</p>
+          <p style="font-size: 14.5px; color: var(--muted); margin: 0;"><strong style="color: var(--ink);">Phone:</strong> Your phone number</p>
+        </div>
+        <div>
+          <h2 style="font-size: 28px; font-weight: 600; margin: 0 0 20px; color: var(--green);">Hours</h2>
+          <div style="border: 1px solid var(--border); border-radius: 14px; padding: 8px 22px; background: var(--bg);">
+            <div style="display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 14.5px;"><span>Monday – Thursday</span><span style="color: var(--muted);">11:00 AM – 9:00 PM</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 14.5px;"><span>Friday – Saturday</span><span style="color: var(--muted);">11:00 AM – 10:00 PM</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 13px 0; font-size: 14.5px;"><span>Sunday</span><span style="color: var(--muted);">12:00 PM – 8:00 PM</span></div>
+          </div>
+          <p style="font-size: 13px; color: var(--faint); margin: 14px 0 0;">Sample hours shown — update to match your real schedule.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER -->
+  <div id="order" style="background: var(--green); padding: 72px 0; position: relative; overflow: hidden;">
+    <svg width="300" height="300" viewBox="0 0 300 300" style="position: absolute; left: -80px; bottom: -100px; opacity: 0.08;"><circle cx="150" cy="150" r="145" stroke="var(--gold)" stroke-width="1.4" fill="none"/></svg>
+    <div class="container" style="text-align: center; max-width: 560px; position: relative;">
+      <h2 class="display" style="font-size: 30px; font-weight: 600; margin: 0 0 12px; color: var(--surface);">Order for pickup or delivery</h2>
+      <p style="font-size: 15px; color: color-mix(in oklab, var(--surface) 78%, transparent); margin: 0 0 28px;">Call us directly, or order through your favorite delivery app.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="tel:+10000000000" class="btn" style="background: var(--gold); color: var(--green-dark);">Call to order</a>
+        <a href="#" class="btn" style="background: transparent; color: var(--surface); border-color: color-mix(in oklab, var(--surface) 40%, transparent);">Order online</a>
+      </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div style="border-top: 1px solid var(--border); padding: 40px 0;">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <svg width="24" height="24" viewBox="0 0 34 34" fill="none">
-          <rect width="34" height="34" rx="9" fill="url(#footGrad)"/>
-          <path d="M11 21L21 11" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M14 11H21V18" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="footGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#2A6FE0"/>
-              <stop offset="1" stop-color="#22A06B"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span style="font-size: 14.5px; color: var(--text-muted);">Shafa — plan tomorrow's prep, today.</span>
-      </div>
-      <div style="display: flex; gap: 28px;">
-        <a href="#features" style="font-size: 13.5px; color: var(--text-faint);">Features</a>
-        <a href="#how-it-works" style="font-size: 13.5px; color: var(--text-faint);">How it works</a>
-        <a href="#download" style="font-size: 13.5px; color: var(--text-faint);">Download</a>
+  <div style="padding: 34px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+      <span class="display" style="font-size: 15px; font-weight: 600; color: var(--green);">Shafa Restaurant</span>
+      <div style="display: flex; gap: 24px;">
+        <a href="#about" style="font-size: 13px; color: var(--faint);">Our story</a>
+        <a href="#menu" style="font-size: 13px; color: var(--faint);">Menu</a>
+        <a href="#gallery" style="font-size: 13px; color: var(--faint);">Gallery</a>
+        <a href="#location" style="font-size: 13px; color: var(--faint);">Location &amp; Hours</a>
       </div>
     </div>
   </div>
